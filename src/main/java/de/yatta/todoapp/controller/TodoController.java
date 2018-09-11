@@ -44,6 +44,7 @@ public class TodoController {
         return todoRepository.findById(id)
                 .map(todoData -> {
                     todoData.setTitle(todo.getTitle());
+                    todoData.setPrio(todo.getPrio());
                     todoData.setCompleted(todo.getCompleted());
                     Todo updatedTodo = todoRepository.save(todoData);
                     return ResponseEntity.ok().body(updatedTodo);

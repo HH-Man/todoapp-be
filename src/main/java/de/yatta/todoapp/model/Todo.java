@@ -23,6 +23,8 @@ public class Todo {
 
 	private Date createdAt = new Date();
 	
+	private String prio;
+	
 	public Todo() {
 		super();
 	}
@@ -62,10 +64,18 @@ public class Todo {
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+	
+	public String getPrio() {
+		return prio;
+	}
+
+	public void setPrio(String prio) {
+		this.prio = prio;
+	}
 
 	@Override
 	public String toString() {
-		return String.format("Todo[id=%s, title='%s', completed='%s']", id, title, completed);
+		return String.format("Todo[id=%s, title='%s', prio='%s', completed='%s']", id, title, prio, completed);
 	}
 
 }
