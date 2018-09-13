@@ -1,16 +1,20 @@
 package de.yatta.todoapp.model;
 
 import java.util.Date;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Document(collection = "todos")
 @JsonIgnoreProperties(value = { "createdAt" }, allowGetters = true)
 public class Todo {
+	
 	@Id
 	private String id;
 
@@ -65,6 +69,7 @@ public class Todo {
 		this.createdAt = createdAt;
 	}
 	
+//	@JsonProperty(value="prio")
 	public String getPrio() {
 		return prio;
 	}
